@@ -3,7 +3,8 @@ defmodule PingPongMeasurerRclexOnNerves.MixProject do
 
   @app :ping_pong_measurer_rclex_on_nerves
   @version "0.1.0"
-  @all_targets [:rpi4]
+  #@all_targets [:rpi4]
+  @all_targets [:f3rp70]
 
   def project do
     [
@@ -47,7 +48,8 @@ defmodule PingPongMeasurerRclexOnNerves.MixProject do
       # bumps to Nerves systems. Since these include Linux kernel and Erlang
       # version updates, please review their release notes in case
       # changes to your application are needed.
-      {:nerves_system_rpi4, "~> 1.19", runtime: false, targets: :rpi4}
+      # {:nerves_system_rpi4, "~> 1.19", runtime: false, targets: :rpi4}
+      {:nerves_system_f3rp70, "~> 0.4", runtime: false, targets: :f3rp70}
     ]
   end
 

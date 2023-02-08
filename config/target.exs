@@ -45,6 +45,12 @@ if keys == [],
 config :nerves_ssh,
   authorized_keys: Enum.map(keys, &File.read!/1)
 
+config :nerves_ssh,
+  user_passwords: [
+    # {"username", "password"},
+    {"nerves", "nerves"}
+  ]
+
 # Configure the network using vintage_net
 # See https://github.com/nerves-networking/vintage_net for more information
 config :vintage_net,

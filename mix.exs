@@ -35,6 +35,8 @@ defmodule PingPongMeasurerRclexOnNerves.MixProject do
       {:ring_logger, "~> 0.8.5"},
       {:toolshed, "~> 0.2.26"},
       {:rclex, "~> 0.8.3"},
+      {:nimble_csv, "~> 1.1"},
+      {:flow, "~> 1.0"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.13.0", targets: @all_targets},

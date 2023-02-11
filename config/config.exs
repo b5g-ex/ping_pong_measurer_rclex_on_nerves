@@ -23,6 +23,8 @@ config :nerves, source_date_epoch: "1675841359"
 # Config for Rclex
 config :rclex, ros2_message_types: ["std_msgs/msg/String"]
 
+config :ping_pong_measurer_rclex, :data_directory_path, "/data"
+
 if Mix.target() == :host do
   import_config "host.exs"
 else

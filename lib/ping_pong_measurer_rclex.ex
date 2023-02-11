@@ -51,13 +51,18 @@ defmodule PingPongMeasurerRclex do
 
   def start_os_info_measurement(data_directory_path, measurement_cycle_ms \\ 100)
       when is_binary(data_directory_path) and is_integer(measurement_cycle_ms) do
+    Logger.info("start os info measurer.")
     ds_name = os_info_supervisor_name()
     PingPongMeasurerRclex.DynamicSupervisor.start_link(ds_name)
+
+    Logger.info("start cpu measurer.")
 
     DynamicSupervisor.start_child(
       ds_name,
       {CpuMeasurer, {data_directory_path, measurement_cycle_ms}}
     )
+
+    Logger.info("start mem measurer")
 
     DynamicSupervisor.start_child(
       ds_name,

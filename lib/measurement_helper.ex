@@ -26,12 +26,12 @@ defmodule MeasurementHelper do
   end
 
   defp prepare_data_directory!(node_counts, payload_bytes, measurement_times) do
-    data_directory_path =
-      Application.get_env(:ping_pong_measurer_rclex, :data_directory_path) ||
-        raise """
-        You have to configure :data_directory_path in config.exs
-        ex) config :ping_pong_measurer_rclex, :data_directory_path, "path/to/directory"
-        """
+    data_directory_path = "/data"
+    # Application.get_env(:ping_pong_measurer_rclex, :data_directory_path) ||
+    #   raise """
+    #   You have to configure :data_directory_path in config.exs
+    #   ex) config :ping_pong_measurer_rclex, data_directory_path: "path/to/directory"
+    #   """
 
     dt_string = Data.datetime_to_string(DateTime.utc_now())
     directory_name = "#{dt_string}_pc#{node_counts}_pb#{payload_bytes}_mt#{measurement_times}"
